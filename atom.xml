@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>子浩博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://daizihao.com/"/>
+  <updated>2020-04-12T08:00:03.692Z</updated>
+  <id>https://daizihao.com/</id>
+  
+  <author>
+    <name>ZIHAO DAI</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java反射的简单使用</title>
+    <link href="https://daizihao.com/2019/11/02/java-reflect-note/"/>
+    <id>https://daizihao.com/2019/11/02/java-reflect-note/</id>
+    <published>2019-11-01T16:00:00.000Z</published>
+    <updated>2020-04-12T08:00:03.692Z</updated>
+    
+    <content type="html"><![CDATA[<p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。<br>&lt;–more–&gt;</p><h2 id="获得字节码文件对象"><a href="#获得字节码文件对象" class="headerlink" title="获得字节码文件对象"></a>获得字节码文件对象</h2><ol><li>通过getClass()方法获得<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person p &#x3D; new com.study.javareflect.Person();</span><br><span class="line">Class clazz &#x3D; p.getClass();</span><br></pre></td></tr></table></figure></li><li>通过类名.class的原生方法获取<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class clazz &#x3D; Person.class;</span><br></pre></td></tr></table></figure></li><li>通过Class类的forName()静态方法方法获取 //如JDBC驱动就使用这种方式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class clazz &#x3D; Class.forName(&quot;com.study.javareflect.Person&quot;);</span><br></pre></td></tr></table></figure></li></ol><h2 id="获得构造器对象"><a href="#获得构造器对象" class="headerlink" title="获得构造器对象"></a>获得构造器对象</h2><ol><li><p>调用此方法可以获得类的无参构造器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Constructor constructor clazz.getConstructor();</span><br></pre></td></tr></table></figure></li><li><p>调用此方法可以获得所有访问控制修饰符修饰的（除Public外）无参构造器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Constructor constructor &#x3D; clazz.getDeclaredConstructor();</span><br></pre></td></tr></table></figure></li><li><p>调用此方法可以获得类的所有构造器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Constructor constructor[] clazz.getConstructors();</span><br></pre></td></tr></table></figure></li><li><p>调用此方法可以获得所有访问控制修饰符修饰的构造器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Constructor constructor[] &#x3D; clazz.getDeclaredConstructors();</span><br></pre></td></tr></table></figure></li></ol><h2 id="调用成员方法"><a href="#调用成员方法" class="headerlink" title="调用成员方法"></a>调用成员方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object obj&#x3D;constructor.newInstance(); &#x2F;&#x2F;使用得到的构造器实例化对象</span><br><span class="line">Method method&#x3D;clazz.getMethod(&quot;setAge&quot;, int.class);</span><br><span class="line">method.invoke(obj,18);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。&lt;br&gt;&amp;lt;–more–&amp;gt;&lt;/p&gt;
+&lt;h2 id=&quot;获得
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
